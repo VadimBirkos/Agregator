@@ -1,0 +1,12 @@
+D:\Кодинг\Git\Agregator\Agregator\DalInterface\bin\Debug\DalInterface.dll.config
+D:\Кодинг\Git\Agregator\Agregator\DalInterface\bin\Debug\DalInterface.dll
+D:\Кодинг\Git\Agregator\Agregator\DalInterface\bin\Debug\DalInterface.pdb
+D:\Кодинг\Git\Agregator\Agregator\DalInterface\bin\Debug\CommonInterface.dll
+D:\Кодинг\Git\Agregator\Agregator\DalInterface\bin\Debug\EntityFramework.dll
+D:\Кодинг\Git\Agregator\Agregator\DalInterface\bin\Debug\EntityFramework.SqlServer.dll
+D:\Кодинг\Git\Agregator\Agregator\DalInterface\bin\Debug\CommonInterface.pdb
+D:\Кодинг\Git\Agregator\Agregator\DalInterface\bin\Debug\EntityFramework.xml
+D:\Кодинг\Git\Agregator\Agregator\DalInterface\bin\Debug\EntityFramework.SqlServer.xml
+D:\Кодинг\Git\Agregator\Agregator\DalInterface\obj\Debug\Dal.Interface.csprojResolveAssemblyReference.cache
+D:\Кодинг\Git\Agregator\Agregator\DalInterface\obj\Debug\DalInterface.dll
+D:\Кодинг\Git\Agregator\Agregator\DalInterface\obj\Debug\DalInterface.pdb

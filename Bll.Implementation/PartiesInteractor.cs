@@ -1,12 +1,12 @@
 ﻿using Bll.Interface;
-using DalInterface;
+using Dal.Interface;
 
 namespace Bll.Implementation
 {
-    public class PartiesInteractor:IPartiesInteractor
+    public class PartiesInteractor : IPartiesInteractor
     {
         private IClient _client;
-        private IRepository<PartyModel> _repository; 
+        private IRepository<PartyModel> _repository;
 
         public PartiesInteractor(IClient client, IRepository<PartyModel> repository)
         {

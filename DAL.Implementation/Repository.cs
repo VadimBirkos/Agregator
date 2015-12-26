@@ -4,20 +4,20 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using CommonInterface;
-using DalInterface;
+using Dal.Interface;
 
 namespace DAL.Implementation
 {
-    public class Repository<TEntity>:IRepository<TEntity> where TEntity:class, IEntity
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity
     {
         private readonly DbContext _context;
 
         public Repository(DbContext context)
         {
-            if(context == null) throw new ArgumentNullException(nameof(context));
+            if (context == null) throw new ArgumentNullException(nameof(context));
             _context = context;
         }
-        
+
 
         public IEnumerable<TEntity> GetAll()
         {
@@ -53,3 +53,4 @@ namespace DAL.Implementation
         }
     }
 }
+

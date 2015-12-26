@@ -1,4 +1,4 @@
-﻿using DalInterface;
+﻿using Dal.Interface;
 
 namespace Bll.Interface
 {

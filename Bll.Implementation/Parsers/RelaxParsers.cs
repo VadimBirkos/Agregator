@@ -1,20 +1,19 @@
-﻿using System.Net;
-using Bll.Interface;
+﻿using Bll.Interface;
 
 namespace Bll.Implementation.Parsers
 {
-    class VsemenuParser:IParser
+    public class RelaxParser : IParser
     {
         private readonly IClient _client;
 
-        public VsemenuParser(IClient client)
+        public RelaxParser(IClient client)
         {
             _client = client;
         }
 
         public object Parse()
         {
-            throw new System.NotImplementedException();
+            return null;
         }
     }
 }

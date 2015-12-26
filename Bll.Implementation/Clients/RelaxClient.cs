@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using Bll.Interface;
-using DalInterface;
+using Dal.Interface;
 
 namespace Bll.Implementation.Clients
 {
-    class RelaxClient:IClient
+    class RelaxClient : IClient
     {
         private readonly IParser _parser;
         public RelaxClient(IParser parser)

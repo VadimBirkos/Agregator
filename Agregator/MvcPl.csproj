@@ -248,16 +248,6 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Bll.Implementation\Bll.Implementation.csproj">
-      <Project>{c14f4242-1da8-4ef9-b126-ea8ed3b8d675}</Project>
-      <Name>Bll.Implementation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Bll.Interface\Bll.Interface.csproj">
-      <Project>{68f6bb74-4fe6-4407-8519-1a0b648d621f}</Project>
-      <Name>Bll.Interface</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

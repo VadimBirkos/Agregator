@@ -1,7 +1,10 @@
-﻿namespace Bll.Interface
+﻿using System.Collections.Generic;
+using Dal.Interface;
+
+namespace Bll.Interface
 {
     public interface IParser
     {
-        object Parse();
+        List<PartyModel> Parse(string url);
     }
 }

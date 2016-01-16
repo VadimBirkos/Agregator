@@ -235,10 +235,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Client\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -247,6 +247,24 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bll.Implementation\Bll.Implementation.csproj">
+      <Project>{6ebb311e-021c-47cf-8f8d-f0e730975e02}</Project>
+      <Name>Bll.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bll.Interface\Bll.Interface.csproj">
+      <Project>{0087E31E-3134-4B15-A025-41BCEA6D061E}</Project>
+      <Name>Bll.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonInterface\CommonInterface.csproj">
+      <Project>{D34F80A0-50EE-4D85-A788-21A129517096}</Project>
+      <Name>CommonInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dal.Interface\Dal.Interface.csproj">
+      <Project>{41E7121E-12CA-4E05-9447-3932A9D82393}</Project>
+      <Name>Dal.Interface</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

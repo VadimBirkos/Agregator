@@ -1,0 +1,14 @@
+D:\Кодинг\Git\Agregator\Bll.Implementation\bin\Debug\Bll.Implementation.dll
+D:\Кодинг\Git\Agregator\Bll.Implementation\bin\Debug\Bll.Implementation.pdb
+D:\Кодинг\Git\Agregator\Bll.Implementation\bin\Debug\Bll.Interface.dll
+D:\Кодинг\Git\Agregator\Bll.Implementation\bin\Debug\CommonInterface.dll
+D:\Кодинг\Git\Agregator\Bll.Implementation\bin\Debug\Dal.Interface.dll
+D:\Кодинг\Git\Agregator\Bll.Implementation\bin\Debug\Bll.Interface.pdb
+D:\Кодинг\Git\Agregator\Bll.Implementation\bin\Debug\CommonInterface.pdb
+D:\Кодинг\Git\Agregator\Bll.Implementation\bin\Debug\Dal.Interface.pdb
+D:\Кодинг\Git\Agregator\Bll.Implementation\obj\Debug\Bll.Implementation.csprojResolveAssemblyReference.cache
+D:\Кодинг\Git\Agregator\Bll.Implementation\obj\Debug\Bll.Implementation.dll
+D:\Кодинг\Git\Agregator\Bll.Implementation\obj\Debug\Bll.Implementation.pdb
+D:\Кодинг\Git\Agregator\Bll.Implementation\bin\Debug\HtmlAgilityPack.dll
+D:\Кодинг\Git\Agregator\Bll.Implementation\bin\Debug\HtmlAgilityPack.pdb
+D:\Кодинг\Git\Agregator\Bll.Implementation\bin\Debug\HtmlAgilityPack.xml

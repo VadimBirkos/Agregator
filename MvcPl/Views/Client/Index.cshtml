@@ -1,0 +1,13 @@
+﻿@using CommonInterface
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<select>
+    @foreach (var item in (Dictionary < string, List < MenuItem >>)Model)
+    {
+        <option>@item.Key</option>
+    }
+</select>

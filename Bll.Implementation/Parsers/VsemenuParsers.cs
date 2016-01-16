@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Bll.Interface;
+using Dal.Interface;
 
 namespace Bll.Implementation.Parsers
 {
@@ -12,7 +14,7 @@ namespace Bll.Implementation.Parsers
             _client = client;
         }
 
-        public object Parse()
+        public List<PartyModel> Parse(string url)
         {
             throw new NotImplementedException();
         }

@@ -1,9 +1,15 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
+using Bll.Implementation.Clients;
+using Bll.Implementation.Parsers;
+using CommonInterface;
 
 namespace Agregator.Controllers
 {
     public class HomeController : Controller
     {
+     
+        private RelaxClient a;
         public ActionResult Index()
         {
             return View();

@@ -3,17 +3,20 @@
     public class MenuItem
     {
         public string Name;
-        public string Url;
+        public string RelaxUrl;
+        public string VsemenuUrl;
 
-        public MenuItem(string name,string url )
+        public MenuItem(string name,string relaxUrl, string vsemenuUrl)
         {
-            Url = url;
+            RelaxUrl = relaxUrl;
+            VsemenuUrl = vsemenuUrl;
             Name = name;
         }
 
-        public MenuItem(string name)
+        public MenuItem(string name, string vsemenuUrl)
         {
             Name = name;
+            VsemenuUrl = vsemenuUrl;
         }
     }
 }

@@ -5,6 +5,6 @@ namespace Bll.Interface
 {
     public interface IClient
     {
-        IEnumerable<PartyModel> GetParties();
+        IEnumerable<PartyModel> GetParties(string url);
     }
 }

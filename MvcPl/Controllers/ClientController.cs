@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
+using Bll.Interface;
 using CommonInterface;
 
 namespace Agregator.Controllers
 {
     public class ClientController : Controller
     {
+        private IClient _client;
         // GET: Client
         #region
         private readonly Dictionary<string, List<MenuItem>> _menu = new Dictionary<string, List<MenuItem>>()
@@ -34,11 +36,29 @@ namespace Agregator.Controllers
                 new MenuItem("Салон красоты", @"http://www.relax.by/cat/health/beauty/")
             }
             }};
-        #endregion
 
+        public IClient Client
+        {
+            get
+            {
+                return _client;
+            }
+
+            set
+            {
+                _client = value;
+            }
+        }
+        #endregion
+        
         public ActionResult Index()
         {
             return View(_menu);
+        }
+
+        public ActionResult Parse()
+        {
+            return View(_client.GetParties(@"http://www.relax.by/cat/holiday/wedding/"));
         }
     }
 }

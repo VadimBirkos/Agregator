@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="Clients\RelaxClient.cs" />
     <Compile Include="Clients\VsemenuClient.cs" />
-    <Compile Include="Parsers\RelaxParsers.cs" />
+    <Compile Include="Parsers\RelaxParser.cs" />
     <Compile Include="Parsers\VsemenuParsers.cs" />
     <Compile Include="PartiesInteractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

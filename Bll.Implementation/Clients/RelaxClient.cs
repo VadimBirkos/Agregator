@@ -13,9 +13,9 @@ namespace Bll.Implementation.Clients
             _parser = parser;
         }
 
-        public IEnumerable<PartyModel> GetParties()
+        public IEnumerable<PartyModel> GetParties(string url)
         {            
-            throw new NotImplementedException();
+            return _parser.Parse(url);
         }
     }
 }

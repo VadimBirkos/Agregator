@@ -7,13 +7,6 @@ namespace Bll.Implementation.Parsers
 {
     class VsemenuParser : IParser
     {
-        private readonly IClient _client;
-
-        public VsemenuParser(IClient client)
-        {
-            _client = client;
-        }
-
         public List<PartyModel> Parse(string url)
         {
             throw new NotImplementedException();

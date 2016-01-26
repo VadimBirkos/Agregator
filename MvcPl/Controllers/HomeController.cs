@@ -8,8 +8,6 @@ namespace Agregator.Controllers
 {
     public class HomeController : Controller
     {
-     
-        private RelaxClient a;
         public ActionResult Index()
         {
             return View();

@@ -1,1 +1,14 @@
 D:\Кодинг\Git\Agregator\DAL.Implementation\obj\Debug\DAL.Implementation.csprojResolveAssemblyReference.cache
+D:\Кодинг\Git\Agregator\DAL.Implementation\bin\Debug\CommonInterface.dll
+D:\Кодинг\Git\Agregator\DAL.Implementation\bin\Debug\Dal.Interface.dll
+D:\Кодинг\Git\Agregator\DAL.Implementation\bin\Debug\EntityFramework.dll
+D:\Кодинг\Git\Agregator\DAL.Implementation\bin\Debug\EntityFramework.SqlServer.dll
+D:\Кодинг\Git\Agregator\DAL.Implementation\bin\Debug\CommonInterface.pdb
+D:\Кодинг\Git\Agregator\DAL.Implementation\bin\Debug\Dal.Interface.pdb
+D:\Кодинг\Git\Agregator\DAL.Implementation\bin\Debug\EntityFramework.xml
+D:\Кодинг\Git\Agregator\DAL.Implementation\bin\Debug\EntityFramework.SqlServer.xml
+D:\Кодинг\Git\Agregator\DAL.Implementation\obj\Debug\DAL.Implementation.dll
+D:\Кодинг\Git\Agregator\DAL.Implementation\obj\Debug\DAL.Implementation.pdb
+D:\Кодинг\Git\Agregator\DAL.Implementation\bin\Debug\DAL.Implementation.dll.config
+D:\Кодинг\Git\Agregator\DAL.Implementation\bin\Debug\DAL.Implementation.dll
+D:\Кодинг\Git\Agregator\DAL.Implementation\bin\Debug\DAL.Implementation.pdb

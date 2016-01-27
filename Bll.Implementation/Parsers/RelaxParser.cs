@@ -22,13 +22,20 @@ namespace Bll.Implementation.Parsers
                 if (htmlDoc == null) break;
                 var catalogListNode =
                     GetNode(htmlDoc.DocumentNode, "div class=\"b-institution_description\"").ParentNode;
-
-                resultList.AddRange(from node in catalogListNode.ChildNodes
-                    where node.InnerHtml.Contains("class=\"link link--underline") || !node.InnerHtml.Contains("reklama")
-                    select Parse(node)
-                    into tempEntity
-                    select new PartyModel() {Name = tempEntity.Name, Email = tempEntity.Email, Site = tempEntity.Site});
-
+                foreach (var childNode in catalogListNode.ChildNodes)
+                {
+                    if (childNode.InnerHtml.Contains("class=\"link link--underline") &&
+                        !childNode.InnerHtml.Contains("reklama"))
+                    {
+                        var tempEntity = Parse(childNode);
+                        resultList.Add(new PartyModel()
+                        {
+                            Name = tempEntity.Name,
+                            Email = tempEntity.Email,
+                            Site = tempEntity.Site
+                        });
+                    }
+                }
                 page++;
             }
             return resultList;
@@ -40,10 +47,10 @@ namespace Bll.Implementation.Parsers
             var email = (node.InnerHtml.Contains("E-mail:"))
                 ? GetValue(node, "<noindex><b>E-mail:")
                     .Replace("E-mail:", "")
-                : "Отсутствует";
+                : "Email отсутствует";
             var site = (node.InnerHtml.Contains("<a class=\"link link--colored link--"))
                 ? GetValue(node, "<a class=\"link link--colored link--")
-                : "Отсутствует";
+                : "Сайт отсутствует";
             return new PartyModel() { Name = name, Email = email, Site = site };
         }
 

@@ -2,7 +2,6 @@ D:\Кодинг\Git\Agregator\Bll.Interface\bin\Debug\Bll.Interface.dll
 D:\Кодинг\Git\Agregator\Bll.Interface\bin\Debug\Bll.Interface.pdb
 D:\Кодинг\Git\Agregator\Bll.Interface\bin\Debug\Dal.Interface.dll
 D:\Кодинг\Git\Agregator\Bll.Interface\bin\Debug\CommonInterface.dll
-D:\Кодинг\Git\Agregator\Bll.Interface\bin\Debug\Dal.Interface.pdb
 D:\Кодинг\Git\Agregator\Bll.Interface\bin\Debug\CommonInterface.pdb
 D:\Кодинг\Git\Agregator\Bll.Interface\obj\Debug\Bll.Interface.csprojResolveAssemblyReference.cache
 D:\Кодинг\Git\Agregator\Bll.Interface\obj\Debug\Bll.Interface.dll

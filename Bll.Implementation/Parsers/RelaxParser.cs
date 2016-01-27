@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using Bll.Interface;
+using CommonInterface;
 using Dal.Interface;
 using HtmlAgilityPack;
 
@@ -12,31 +13,24 @@ namespace Bll.Implementation.Parsers
     {
         private int _index;
 
-        public List<PartyModel> Parse(string url)
+        public List<PartyModel> Parse(HtmlDocument htmlDoc)
         {
-            var resultList= new List<PartyModel>();
-            var page = 1;
-            while (true)
+            var resultList = new List<PartyModel>();
+            var catalogListNode =
+                GetNode(htmlDoc.DocumentNode, "div class=\"b-institution_description\"").ParentNode;
+            foreach (var childNode in catalogListNode.ChildNodes)
             {
-                var htmlDoc = (page <= 1) ? LoadHtml(url) : LoadHtml(url + $"?page={page}");
-                if (htmlDoc == null) break;
-                var catalogListNode =
-                    GetNode(htmlDoc.DocumentNode, "div class=\"b-institution_description\"").ParentNode;
-                foreach (var childNode in catalogListNode.ChildNodes)
+                if (childNode.InnerHtml.Contains("class=\"link link--underline") &&
+                    !childNode.InnerHtml.Contains("reklama"))
                 {
-                    if (childNode.InnerHtml.Contains("class=\"link link--underline") &&
-                        !childNode.InnerHtml.Contains("reklama"))
+                    var tempEntity = Parse(childNode);
+                    resultList.Add(new PartyModel()
                     {
-                        var tempEntity = Parse(childNode);
-                        resultList.Add(new PartyModel()
-                        {
-                            Name = tempEntity.Name,
-                            Email = tempEntity.Email,
-                            Site = tempEntity.Site
-                        });
-                    }
+                        Name = tempEntity.Name,
+                        Email = tempEntity.Email,
+                        Site = tempEntity.Site
+                    });
                 }
-                page++;
             }
             return resultList;
         }
@@ -52,26 +46,6 @@ namespace Bll.Implementation.Parsers
                 ? GetValue(node, "<a class=\"link link--colored link--")
                 : "Сайт отсутствует";
             return new PartyModel() { Name = name, Email = email, Site = site };
-        }
-
-        private  HtmlDocument LoadHtml(string adress)
-        {
-            var client = new WebClient();
-            try
-            {
-                var byteArr = client.DownloadData(adress);
-                var htmlDoc = new HtmlDocument();
-                htmlDoc.LoadHtml(Encoding.UTF8.GetString(byteArr));
-                return htmlDoc;
-            }
-            catch (WebException)
-            {
-                return null;
-            }
-            finally
-            {
-                client.Dispose();
-            }
         }
 
         private string GetValue(HtmlNode node, string condition)

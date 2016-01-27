@@ -9,3 +9,4 @@ D:\Кодинг\Git\Agregator\Bll.Interface\obj\Debug\Bll.Interface.pdb
 D:\Кодинг\Git\Agregator\Bll.Interface\bin\Debug\HtmlAgilityPack.dll
 D:\Кодинг\Git\Agregator\Bll.Interface\bin\Debug\HtmlAgilityPack.pdb
 D:\Кодинг\Git\Agregator\Bll.Interface\bin\Debug\HtmlAgilityPack.xml
+D:\Кодинг\Git\Agregator\Bll.Interface\bin\Debug\Dal.Interface.pdb

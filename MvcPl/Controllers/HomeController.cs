@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
-using Bll.Implementation.Clients;
-using Bll.Implementation.Parsers;
-using CommonInterface;
+﻿using System.Web.Mvc;
 
 namespace Agregator.Controllers
 {

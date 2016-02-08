@@ -1,0 +1,24 @@
+﻿@model List<CommonInterface.MenuItem>
+
+<div>
+    <select id="catalog-submenu" style="margin-top: 5px">
+        @foreach (var i in Model)
+        {
+            <option value="@i.VsemenuUrl">@i.Name</option>
+        }
+    </select>
+    <div class="btn">
+        <input type="button" id="requestParser" value="Начать" class="btn-success" />
+    </div>
+    <div id="parse-result"></div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#requestParser").click(function (e) {
+            e.preventDefault();
+            var requestUrl = $("#catalog-submenu")[0].value;
+            $("#parse-result").load('@Url.Action("Parse", "Client")', { url: requestUrl });
+        });
+    });
+</script>

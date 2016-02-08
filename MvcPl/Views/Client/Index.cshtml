@@ -1,13 +1,34 @@
 ﻿@using CommonInterface
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Главная";
 }
 
+@Styles.Render("~/content/bootstrap.css")
+@Styles.Render("~/content/bootstrap.min.css")
+@Scripts.Render("~/scripts/bootstrap.js")
+@Scripts.Render("~/scripts/bootstrap.min.js")
+@Scripts.Render("~/scripts/jquery-2.2.0.min.js")
+@Scripts.Render("~/scripts/jquery-2.2.0.js")
 <h2>Index</h2>
-<select>
-    @foreach (var item in (Dictionary < string, List < MenuItem >>)Model)
-    {
-        <option>@item.Key</option>
-    }
-</select>
+<div>
+    <select id="catalog-menu">
+        @foreach (var menuItem in (Dictionary<string, List<MenuItem>>) Model)
+        {
+            <option value="@menuItem.Key">@menuItem.Key</option>
+        }
+
+    </select>
+    <div id="change-result"></div>
+</div>
+<input type="file" name="upload" id="uploadFile" /><br />
+<script>
+        $("#catalog-menu").change(function(e) {
+            e.preventDefault();
+            var key = $("#catalog-menu")[0].value;
+
+            $.post('@Url.Action("FilterCatalog", "Client")', { key: key },
+                function(data) {
+                    $('#change-result').html(data);
+                });
+        });
+</script>

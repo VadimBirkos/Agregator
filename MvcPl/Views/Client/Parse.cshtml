@@ -1,12 +1,21 @@
 ﻿@model IEnumerable<Dal.Interface.PartyModel>
 
-@{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
-}
-
-<h2>title</h2>
-@foreach (var item in Model)
-{
-    <h1>@item.Name</h1><br/>
-}
+<div id="parse-results-list">
+    <ul title="Все предприятия">
+        @foreach (var item in Model)
+        {
+            <li>
+                @item.Name
+                @item.Email
+                @if (item.Site != "Сайт отсутствует")
+                {
+                <a href="@item.Site">@item.Site</a>
+                }
+                else
+                {
+                @item.Site
+                }
+            </li>
+        }
+    </ul>
+</div>

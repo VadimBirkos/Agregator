@@ -169,3 +169,7 @@ D:\Кодинг\Git\Agregator\MvcPl\bin\roslyn\System.IO.FileSystem.Primitives.d
 D:\Кодинг\Git\Agregator\MvcPl\bin\roslyn\vbc.exe.config
 D:\Кодинг\Git\Agregator\MvcPl\bin\roslyn\vbc.rsp
 D:\Кодинг\Git\Agregator\MvcPl\bin\System.Web.Optimization.xml
+D:\Кодинг\Git\Agregator\MvcPl\bin\PagedList.dll
+D:\Кодинг\Git\Agregator\MvcPl\bin\PagedList.Mvc.dll
+D:\Кодинг\Git\Agregator\MvcPl\bin\PagedList.xml
+D:\Кодинг\Git\Agregator\MvcPl\bin\PagedList.Mvc.xml

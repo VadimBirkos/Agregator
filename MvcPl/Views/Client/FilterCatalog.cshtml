@@ -18,7 +18,7 @@
         $("#requestParser").click(function (e) {
             e.preventDefault();
             var requestUrl = $("#catalog-submenu")[0].value;
-            $("#parse-result").load('@Url.Action("Parse", "Client")', { url: requestUrl });
+            $("#parse-result").load('@Url.Action("Parse", "Client")', {page: 1, url: requestUrl });
         });
     });
 </script>

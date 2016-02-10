@@ -3,11 +3,15 @@ using System.Linq;
 using System.Web.Mvc;
 using Bll.Implementation.Clients;
 using CommonInterface;
+using Dal.Interface;
+using PagedList.Mvc;
+using PagedList;
 
 namespace Agregator.Controllers
 {
     public class ClientController : Controller
     {
+        private IEnumerable<PartyModel> _temp;
         private readonly RelaxClient _relaxClient;
 
         public ClientController()
@@ -59,6 +63,14 @@ namespace Agregator.Controllers
             }
         };
 
+        public RelaxClient RelaxClient
+        {
+            get
+            {
+                return _relaxClient;
+            }
+        }
+
         #endregion
 
         public ActionResult Index()
@@ -73,13 +85,15 @@ namespace Agregator.Controllers
             return PartialView(catalog);
         }
 
-        public ActionResult Parse(string url)
+        private void GetParseList(string url)
         {
-            if (url != null)
-            {
-                return PartialView(_relaxClient.GetParties(url));
-            }
-            return null;
+            _temp = RelaxClient.GetParties(url);
+        }
+
+        public ActionResult Parse(int page, string url = null)
+        {
+            if(url != null) GetParseList(url);
+            return PartialView(_temp.ToPagedList(page,20));
         }
 
         public ActionResult TestPage()

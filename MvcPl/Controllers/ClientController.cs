@@ -1,21 +1,24 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Caching;
 using System.Web.Mvc;
 using Bll.Implementation.Clients;
 using CommonInterface;
 using Dal.Interface;
-using PagedList.Mvc;
+using Microsoft.Ajax.Utilities;
 using PagedList;
 
 namespace Agregator.Controllers
 {
     public class ClientController : Controller
     {
-        private IEnumerable<PartyModel> _temp;
+        private ObjectCache _cache;
+        private IEnumerable<PartyModel> _tempList;
         private readonly RelaxClient _relaxClient;
 
         public ClientController()
         {
+            _cache = MemoryCache.Default;
             _relaxClient = new RelaxClient();
         }
 
@@ -87,13 +90,17 @@ namespace Agregator.Controllers
 
         private void GetParseList(string url)
         {
-            _temp = RelaxClient.GetParties(url);
+            if(_cache[url] == null)
+            _cache[url] = RelaxClient.GetParties(url);
+            _cache["last"] = _cache[url];
         }
 
         public ActionResult Parse(int page, string url = null)
         {
             if(url != null) GetParseList(url);
-            return PartialView(_temp.ToPagedList(page,20));
+            var a = _cache["last"];
+            _tempList = (List<PartyModel>)a;
+            return PartialView(_tempList.ToPagedList(page,20));
         }
 
         public ActionResult TestPage()

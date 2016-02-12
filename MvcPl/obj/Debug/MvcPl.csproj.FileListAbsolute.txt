@@ -173,3 +173,4 @@ D:\Кодинг\Git\Agregator\MvcPl\bin\PagedList.dll
 D:\Кодинг\Git\Agregator\MvcPl\bin\PagedList.Mvc.dll
 D:\Кодинг\Git\Agregator\MvcPl\bin\PagedList.xml
 D:\Кодинг\Git\Agregator\MvcPl\bin\PagedList.Mvc.xml
+D:\Кодинг\Git\Agregator\MvcPl\bin\FileCache.dll

@@ -1,0 +1,67 @@
+{
+    "Развлечения":[
+        {
+            "Name": "Ночные клубы",
+            "Link": "http://www.relax.by/cat/ent/clubs/"
+        },
+        {
+            "Name" : "Караоке-клубы",
+            "Link" : "http://www.relax.by/cat/ent/karaoke/"
+        },
+        {
+            "Name" : "Боулинг",
+            "Link" : "http://www.relax.by/cat/ent/bowlings/"
+        },
+        {
+            "Name" : "Бильярд",
+            "Link" : "http://www.relax.by/cat/ent/billiards/"
+        },
+        {
+            "Name" : "Бани и сауны",
+            "Link" : "http://www.relax.by/cat/ent/clubs/"
+        },
+        {
+            "Name" : "Коттеджи и усадьбы",
+            "Link" : "http://www.relax.by/cat/tourism/cottages/"
+        },
+        {
+            "Name" : "Интернет кафе",
+            "Link" : "http://www.relax.by/cat/ent/internet-cafe/"
+        },
+        {
+            "Name" : "Кинотеатры",
+            "Link" : "http://www.relax.by/cat/ent/kino/"
+        },
+        {
+            "Name" : "Театры",
+            "Link" : "http://www.relax.by/cat/ent/theatres/"
+        }
+        ,
+        {
+            "Name" : "Музеи и галереи",
+            "Link" : "http://www.relax.by/cat/ent/museums/"
+        },
+        {
+            "Name" : "Концертные залы",
+            "Link" : "http://www.relax.by/cat/ent/halls/"
+        },
+        {
+            "Name" : "Квесты",
+            "Link" : "http://www.relax.by/cat/active/quest/"
+        }
+    ],
+     "Все для праздника":[
+         {
+             "Name" : "Свадебные салоны",
+             "Link" : "http://www.relax.by/cat/holiday/wedding/" 
+         }
+     ],
+     "Здоровье и красота":[
+         {
+             "Name" : "Салон красоты",
+             "Link" : "http://www.relax.by/cat/health/beauty/"
+         }
+     ]
+        
+    
+}

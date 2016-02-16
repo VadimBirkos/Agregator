@@ -5,7 +5,6 @@ using System.Web.Mvc;
 using Bll.Implementation.Clients;
 using CommonInterface;
 using Dal.Interface;
-using Microsoft.Ajax.Utilities;
 using PagedList;
 
 namespace Agregator.Controllers
@@ -31,7 +30,6 @@ namespace Agregator.Controllers
 
         #region
 
-        private readonly string[] list = {"Развлечения", "Все для праздника", "Здоровье и красота"}; 
         private readonly Dictionary<string, List<MenuItem>> _menu = new Dictionary<string, List<MenuItem>>()
         {
             {
@@ -81,7 +79,6 @@ namespace Agregator.Controllers
             return View(_menu);
         }
 
-        [HttpPost]
         public ActionResult FilterCatalog(string  key)
         {
             var catalog = _menu.Where(item => item.Key == key).ToList()[0].Value;

@@ -1,5 +1,7 @@
 {
-    "Развлечения":[
+    "Развлечения" : {
+        "Name" : "Развлечения",
+        "Content" : [
         {
             "Name": "Ночные клубы",
             "Link": "http://www.relax.by/cat/ent/clubs/"
@@ -49,19 +51,20 @@
             "Name" : "Квесты",
             "Link" : "http://www.relax.by/cat/active/quest/"
         }
-    ],
-     "Все для праздника":[
+    ]},
+     "Все для праздника" : {"Name" : "Все для праздника",
+     "Content" : [
          {
              "Name" : "Свадебные салоны",
              "Link" : "http://www.relax.by/cat/holiday/wedding/" 
          }
-     ],
-     "Здоровье и красота":[
+     ]},
+     "Здоровье и красота" : {
+         "Name" : "Здоровье и красота",
+         "Content" : [
          {
              "Name" : "Салон красоты",
              "Link" : "http://www.relax.by/cat/health/beauty/"
          }
-     ]
-        
-    
+     ]}   
 }

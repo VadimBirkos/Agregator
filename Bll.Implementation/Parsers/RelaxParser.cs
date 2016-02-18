@@ -1,9 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
 using Bll.Interface;
-using CommonInterface;
 using Dal.Interface;
 using HtmlAgilityPack;
 
@@ -50,7 +46,7 @@ namespace Bll.Implementation.Parsers
 
         private string GetValue(HtmlNode node, string condition)
         {
-            return GetNode(node, condition).InnerText.Replace("  ", "").Replace("\n", "").Replace("\t", "");
+            return GetNode(node, condition).InnerText.Replace("  ", "").Replace("\n", "").Replace("\t", "").Replace("&#039;", "'");
         }
 
         private HtmlNode GetNode(HtmlNode node, string condition)

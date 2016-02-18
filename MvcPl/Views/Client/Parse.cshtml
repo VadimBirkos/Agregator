@@ -1,5 +1,4 @@
-﻿@model PagedList.IPagedList<Dal.Interface.PartyModel>
-
+﻿@model IEnumerable<Dal.Interface.PartyModel>
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css"/>
 <div id="parse-view">
     <div id="parse-results-list">
@@ -21,11 +20,11 @@
             }
         </ul>
     </div>
-
-    Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
+    Страница @((int)ViewBag.PageCount < (int)ViewBag.CurrentPage ? 0 : ViewBag.CurrentPage) из @ViewBag.PageCount
+  
     <br/>
     <ul class="pagination">
-        @if (Model.PageNumber >= 2)
+        @if ((int)ViewBag.CurrentPage >= 2)
         {
             <li>
                 <a href="#" aria-label="Previous" onclick="previousPage()">
@@ -33,16 +32,16 @@
                 </a>
             </li>
         }
-        @for (var i = 0; i < Model.PageCount; i++)
+        @for (var i = 0; i < (int)ViewBag.PageCount; i++)
         {
-            if (@Model.PageNumber == i + 1)
+            if ((int)ViewBag.CurrentPage == i + 1)
             {
                 <li value="@(i + 1)" id="current-page-item"><a>@(i + 1)</a></li>
                 continue;
             }
             <li value="@(i + 1)" id="page-item"><a href="#" onclick="changePage(this.innerText)"> @(i + 1) </a></li>
         }
-        @if (Model.PageNumber < Model.PageCount - 1 && Model.PageCount > 1)
+        @if ((int)ViewBag.CurrentPage < (int)ViewBag.PageCount - 1 && (int)ViewBag.PageCount > 1)
         {
             <li>
                 <a href="#" aria-label="Next" onclick="nextPage()">

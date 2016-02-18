@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Caching;
 using System.Web.Mvc;
 using Agregator.Infrastructure;
 using Bll.Implementation.Clients;
 using Dal.Interface;
-using PagedList;
 
 namespace Agregator.Controllers
 {
@@ -56,7 +56,15 @@ namespace Agregator.Controllers
             if (url != null) GetParseList(url);
             var a = _cache["last"];
             _tempList = (List<PartyModel>) a;
-            return PartialView(_tempList.ToPagedList(page, 20));
+            ViewData["CurrentPage"] = page;
+            ViewBag.CurrentPage = page;
+
+            double count = 0;
+            foreach (var model in _tempList)
+                count++;
+            ViewData["PageCount"] = Math.Round(count/30);
+            ViewBag.PageCount = Math.Round(count/30);
+            return PartialView((page > 1) ? _tempList.Skip((page-1) * 30).Take(30) : _tempList.Take(30));
         }
     }
 }

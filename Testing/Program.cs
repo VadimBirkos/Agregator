@@ -1,36 +1,22 @@
-﻿using System.Web.Helpers;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using CommonInterface;
-using  Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-
+﻿using System.Collections.Generic;
+using CommonInterface; 
 namespace Testing
 {
     class Program
     {
-        static void Main(string[] args)
+        static void DisplayInExcel(IEnumerable<MenuItem> items)
         {
-            var menu = new Dictionary<string, List<MenuItem>>(); 
-            var token = JToken.Parse(File.ReadAllText(@"D:\Кодинг\Git\Agregator\Testing\configDate.json"));
-            foreach (var upper in token)
+          
+        }
+
+        static void Main(string[] args)
+        { 
+            var list = new List<MenuItem>()
             {
-                foreach (var menuHeader in upper)
-                {
-                    foreach (var menuItem in menuHeader["Content"])
-                    {
-                        if (menu.ContainsKey(menuHeader["Name"].ToString()))
-                            menu[menuHeader["Name"].ToString()].Add(
-                                new MenuItem(menuItem["Name"].ToString(), menuItem["Link"].ToString()));
-                        else
-                            menu.Add(menuHeader["Name"].ToString(), new List<MenuItem>()
-                            {
-                                new MenuItem(menuItem["Name"].ToString(), menuItem["Link"].ToString())
-                            });
-                    }
-                }
-            }
+                new MenuItem("Relax", "relax.by"),
+                new MenuItem("onliner", "Onliner.by"),
+                new MenuItem("Виктория", "victoria.by")
+            };
 
         }
 }

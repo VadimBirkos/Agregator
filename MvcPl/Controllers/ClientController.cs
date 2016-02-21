@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Caching;
 using System.Web.Mvc;
 using Agregator.Infrastructure;
+using Agregator.Models;
 using Bll.Implementation.Clients;
 using Dal.Interface;
 
@@ -11,42 +11,35 @@ namespace Agregator.Controllers
 {
     public class ClientController : Controller
     {
-        private const string Path = @"D:\Кодинг\Git\Agregator\MvcPl\configDate.json";
+        private const string PartialPath = "~/App_Data/configData.json";
+        private const int PageSize = 30;
         private readonly ObjectCache _cache;
-        private readonly JsonParser _jsonParser;
-        private IEnumerable<PartyModel> _tempList;
-
+        private readonly IConfigurationManager _configurationManager;
         private RelaxClient RelaxClient { get; }
 
         public ClientController()
         {
-            _jsonParser = new JsonParser();
-            _cache = MemoryCache.Default;
+            _configurationManager = new ConfigurationManager();
+            _cache = MemoryCache.Default;   
             RelaxClient = new RelaxClient();
-        }
-
-        public ClientController(RelaxClient relaxClient, JsonParser jsonParser)
-        {
-            RelaxClient = relaxClient;
-            this._jsonParser = jsonParser;
         }
 
         public ActionResult Index()
         {
-            var menu = _jsonParser.ParseJSONMenuItems(Path);
+            var menu = _configurationManager.ReadConfiguration(HttpContext.Server.MapPath(PartialPath));
             return View(menu);
         }
 
         public ActionResult FilterCatalog(string key)
         {
-            var menu = _jsonParser.ParseJSONMenuItems(Path);
-            var catalog = menu?.Where(item => item.Key == key).ToList()[0].Value;
+            var menu = _configurationManager.ReadConfiguration(HttpContext.Server.MapPath(PartialPath));
+            var catalog = menu.FirstOrDefault(item => item.Key == key).Value;
             return PartialView(catalog);
         }
 
         private void GetParseList(string url)
         {
-            if (_cache[url] == null)
+            if (_cache[url] == null) 
                 _cache[url] = RelaxClient.GetParties(url);
             _cache["last"] = _cache[url];
         }
@@ -54,17 +47,16 @@ namespace Agregator.Controllers
         public ActionResult Parse(int page, string url = null)
         {
             if (url != null) GetParseList(url);
-            var a = _cache["last"];
-            _tempList = (List<PartyModel>) a;
-            ViewData["CurrentPage"] = page;
-            ViewBag.CurrentPage = page;
-
-            double count = 0;
-            foreach (var model in _tempList)
-                count++;
-            ViewData["PageCount"] = Math.Round(count/30);
-            ViewBag.PageCount = Math.Round(count/30);
-            return PartialView((page > 1) ? _tempList.Skip((page-1) * 30).Take(30) : _tempList.Take(30));
+            var cacheItem = (List<PartyModel>) _cache["last"];
+            var pagingModel = new PagingModel()
+            {
+                PartyModelList = page > 1 
+                ? cacheItem.Skip((page - 1) * PageSize).Take(PageSize) 
+                : cacheItem.Take(PageSize),
+                CurrentPage = page,
+                CountPage = cacheItem.Count/PageSize
+            };
+            return PartialView(pagingModel);
         }
     }
 }

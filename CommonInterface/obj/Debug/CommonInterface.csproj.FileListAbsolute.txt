@@ -2,4 +2,3 @@ D:\Кодинг\Git\Agregator\CommonInterface\bin\Debug\CommonInterface.dll
 D:\Кодинг\Git\Agregator\CommonInterface\bin\Debug\CommonInterface.pdb
 D:\Кодинг\Git\Agregator\CommonInterface\obj\Debug\CommonInterface.dll
 D:\Кодинг\Git\Agregator\CommonInterface\obj\Debug\CommonInterface.pdb
-D:\Кодинг\Git\Agregator\CommonInterface\obj\Debug\CommonInterface.csprojResolveAssemblyReference.cache

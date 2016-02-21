@@ -1,13 +1,19 @@
-﻿@model IEnumerable<Dal.Interface.PartyModel>
-<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css"/>
+﻿@model Agregator.Models.PagingModel
 <div id="parse-view">
     <div id="parse-results-list">
         <ul id="list" title="Все предприятия">
-            @foreach (var item in Model)
+            @foreach (var item in Model.PartyModelList)
             {
                 <li>
                     @item.Name
-                    @item.Email
+                    @if (item.Email != "Email отсутствует")
+                    {
+                        <a href="mailto:@item.Email">@item.Email</a>
+                    }
+                    else
+                    {
+                        @item.Email
+                    }
                     @if (item.Site != "Сайт отсутствует")
                     {
                         <a href="@item.Site">@item.Site</a>
@@ -20,11 +26,11 @@
             }
         </ul>
     </div>
-    Страница @((int)ViewBag.PageCount < (int)ViewBag.CurrentPage ? 0 : ViewBag.CurrentPage) из @ViewBag.PageCount
+    Страница @(Model.CountPage < Model.CurrentPage ? 0 : Model.CurrentPage) из @Model.CountPage
   
     <br/>
     <ul class="pagination">
-        @if ((int)ViewBag.CurrentPage >= 2)
+        @if (Model.CountPage >= 2)
         {
             <li>
                 <a href="#" aria-label="Previous" onclick="previousPage()">
@@ -32,16 +38,16 @@
                 </a>
             </li>
         }
-        @for (var i = 0; i < (int)ViewBag.PageCount; i++)
+        @for (var i = 0; i < Model.CountPage; i++)
         {
-            if ((int)ViewBag.CurrentPage == i + 1)
+            if (Model.CurrentPage == i + 1)
             {
                 <li value="@(i + 1)" id="current-page-item"><a>@(i + 1)</a></li>
                 continue;
             }
             <li value="@(i + 1)" id="page-item"><a href="#" onclick="changePage(this.innerText)"> @(i + 1) </a></li>
         }
-        @if ((int)ViewBag.CurrentPage < (int)ViewBag.PageCount - 1 && (int)ViewBag.PageCount > 1)
+        @if (Model.CurrentPage < Model.CountPage - 1 && Model.CountPage > 1)
         {
             <li>
                 <a href="#" aria-label="Next" onclick="nextPage()">
@@ -52,7 +58,6 @@
     </ul>
 </div>
 <script>
-    
     function nextPage() {
         changePage(( + $("#current-page-item")[0].value + 1));
     }

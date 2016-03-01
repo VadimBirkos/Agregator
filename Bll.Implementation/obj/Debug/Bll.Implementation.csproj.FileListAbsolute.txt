@@ -12,3 +12,4 @@ D:\Кодинг\Git\Agregator\Bll.Implementation\obj\Debug\Bll.Implementation.pd
 D:\Кодинг\Git\Agregator\Bll.Implementation\bin\Debug\HtmlAgilityPack.dll
 D:\Кодинг\Git\Agregator\Bll.Implementation\bin\Debug\HtmlAgilityPack.pdb
 D:\Кодинг\Git\Agregator\Bll.Implementation\bin\Debug\HtmlAgilityPack.xml
+D:\Кодинг\Git\Agregator\Bll.Implementation\obj\Debug\Bll.Implementation.csproj.ResolveComReference.cache

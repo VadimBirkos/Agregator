@@ -1,5 +1,6 @@
 ﻿@model Agregator.Models.PagingModel
 <div id="parse-view">
+    <input type="button" id="saveButton" class="btn-xs" value="Сохранить"/>
     <div id="parse-results-list">
         <ul id="list" title="Все предприятия">
             @foreach (var item in Model.PartyModelList)
@@ -27,9 +28,9 @@
         </ul>
     </div>
     Страница @(Model.CountPage < Model.CurrentPage ? 0 : Model.CurrentPage) из @Model.CountPage
-  
+
     <br/>
-    <ul class="pagination">
+    <ul class="list-group-item-text">
         @if (Model.CountPage >= 2)
         {
             <li>
@@ -58,12 +59,25 @@
     </ul>
 </div>
 <script>
+    $(document).ready(function() {
+        $("#saveButton").click(function(e) {
+            e.preventDefault();
+            var requestUrl = $("#catalog-submenu")[0].value;
+            //$.get("/Client/Save", ,  OnAjaxSuccess);
+            OnAjaxSuccess(requestUrl);
+        });
+    });
+
+    function OnAjaxSuccess(url) {
+        document.location.href = "/Client/Save?url="+url;
+    }
+
     function nextPage() {
-        changePage(( + $("#current-page-item")[0].value + 1));
+        changePage((+ $("#current-page-item")[0].value + 1));
     }
 
     function previousPage() {
-        changePage(( + $("#current-page-item")[0].value - 1));
+        changePage((+ $("#current-page-item")[0].value - 1));
     }
 
     function changePage(page) {

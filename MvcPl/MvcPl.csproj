@@ -256,7 +256,9 @@
     <Content Include="Views\Client\Parse.cshtml" />
     <Content Include="Views\Client\FilterCatalog.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Files\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

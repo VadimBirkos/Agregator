@@ -11,3 +11,4 @@ D:\Кодинг\Git\Agregator\Testing\bin\Debug\Dal.Interface.dll
 D:\Кодинг\Git\Agregator\Testing\bin\Debug\System.Web.Helpers.dll
 D:\Кодинг\Git\Agregator\Testing\bin\Debug\CommonInterface.pdb
 D:\Кодинг\Git\Agregator\Testing\bin\Debug\Dal.Interface.pdb
+D:\Кодинг\Git\Agregator\Testing\obj\Debug\Testing.csproj.ResolveComReference.cache

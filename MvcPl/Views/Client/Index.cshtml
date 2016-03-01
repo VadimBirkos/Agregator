@@ -2,7 +2,6 @@
 @{
     ViewBag.Title = "Главная";
 }
-
 @Styles.Render("~/content/bootstrap.css")
 @Styles.Render("~/content/bootstrap.min.css")
 @Scripts.Render("~/scripts/bootstrap.js")
@@ -18,16 +17,24 @@
         }
 
     </select>
+    <script>
+        var key = $("#catalog-menu")[0].value;
+        $.post('@Url.Action("FilterCatalog", "Client")', { key: key },
+            function (data) {
+                $("#change-result").html(data);
+            });
+    </script>
     <div id="change-result"></div>
 </div>
 <script>
-        $("#catalog-menu").change(function(e) {
-            e.preventDefault();
-            var key = $("#catalog-menu")[0].value;
-
-            $.post('@Url.Action("FilterCatalog", "Client")', { key: key },
-                function(data) {
-                    $('#change-result').html(data);
-                });
-        });
+    $("#catalog-menu").change(function(e) {
+        e.preventDefault();
+        var key = $("#catalog-menu")[0].value;
+        $.post('@Url.Action("FilterCatalog", "Client")', { key: key },
+            function(data) {
+                $("#change-result").html(data);
+            });
+    });
 </script>
+
+

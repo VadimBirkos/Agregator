@@ -45,6 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IClient.cs" />
+    <Compile Include="IExcelExporter.cs" />
+    <Compile Include="IFileSaver.cs" />
+    <Compile Include="IFileWriter.cs" />
     <Compile Include="IParser.cs" />
     <Compile Include="IPartiesInteraktor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
